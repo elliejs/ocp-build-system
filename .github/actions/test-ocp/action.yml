@@ -119,8 +119,6 @@ runs:
         
         # Remove cadquery-ocp-novtk dep (correct OCP variant already installed)
         sed -i.bak '/"cadquery-ocp-novtk/d' pyproject.toml
-        # Patch to allow Python 3.14
-        sed -i.bak 's/< 3.14/< 3.15/' pyproject.toml
         uv pip install .
 
         echo "=> Installed packages for test"

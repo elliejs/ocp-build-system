@@ -172,7 +172,6 @@ runs:
         cp $CONDA_PREFIX/lib/python$PY_VER/site-packages/vtkmodules/${{ inputs.vtk-libs }} $DEST/lib/
         cp $CONDA_PREFIX/lib/python$PY_VER/site-packages/vtk.py $DEST
 
-        # if [[ "$RUNNER_OS" == "Linux" && "$PY_VER" != "3.13" ]]; then
         if [[ "$RUNNER_OS" == "Linux" ]]; then
           cp $CONDA_PREFIX/lib/python$PY_VER/site-packages/vtk.libs/* $DEST/lib/
         fi
