@@ -44,7 +44,7 @@ jobs:
             runner: ubuntu-24.04-arm
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Build SDKs
         id: build-sdks
@@ -86,7 +86,7 @@ jobs:
             shells: "bash cmd.exe"
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Build SDKs
         id: build-sdks
@@ -124,7 +124,7 @@ jobs:
             plat: "manylinux_2_31_x86_64 manylinux_2_31_aarch64"
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Build or download OCP Source
         id: build-ocp-source
         uses: ./.github/actions/build-ocp-source
@@ -149,7 +149,7 @@ jobs:
             plat: "win_amd64"
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Build or download OCP Source
         id: build-ocp-source
         uses: ./.github/actions/build-ocp-source
@@ -172,7 +172,7 @@ jobs:
         python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Install uv
         uses: astral-sh/setup-uv@v7
@@ -225,7 +225,7 @@ jobs:
             plat: manylinux_2_31_aarch64
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Build OCP
         id: build-ocp
         uses: ./.github/actions/build-ocp
@@ -272,7 +272,7 @@ jobs:
             module: "OCP.*.pyd"
             ocp-source-tag: "windows-2022"
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Build OCP
         id: build-ocp
         uses: ./.github/actions/build-ocp
@@ -322,7 +322,7 @@ jobs:
             runner: windows-2022
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Test OCP
         id: test-ocp
         uses: ./.github/actions/test-ocp
@@ -343,7 +343,7 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         if: env.RELEASE_TO_REPO == 'true'
 
       - name: Download all wheel artifacts
