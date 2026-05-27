@@ -37,7 +37,7 @@ runs:
       with:
         path: |
           ~/opt/local/vtk-${{ env.VTK }}
-        key: VTK-${{ env.VTK }}-py-${{ inputs.python-version }}-${{ inputs.os }}-
+        key: VTK-${{ env.VTK }}-${{ inputs.os }}-py-${{ inputs.python-version }}-
 
     # - - -
 
@@ -47,7 +47,7 @@ runs:
       with:
         path: |
           ~/opt/local/occt-${{ env.OCCT }}-${{ inputs.use-vtk }}
-        key: OCCT-${{ env.OCCT }}-py-${{ inputs.python-version }}-${{ inputs.use-vtk }}-${{ inputs.os }}-
+        key: OCCT-${{ env.OCCT }}-${{ inputs.use-vtk }}-${{ inputs.os }}-py-${{ inputs.python-version }}-
 
     # - - -
 

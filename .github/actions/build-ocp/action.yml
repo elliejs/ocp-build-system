@@ -110,7 +110,7 @@ runs:
       with:
         path: |
           ~/opt/local/vtk-${{ env.VTK }}
-        key: VTK-${{ env.VTK }}-py-${{ inputs.python-version }}-${{ inputs.os }}-
+        key: VTK-${{ env.VTK }}-${{ inputs.os }}-py-${{ inputs.python-version }}-
 
     
     - name: Restore OCCT SDK cache with VTK support
@@ -119,7 +119,7 @@ runs:
       with:
         path: |
           ~/opt/local/occt-${{ env.OCCT }}-${{ inputs.use-vtk }}
-        key: OCCT-${{ env.OCCT }}-py-${{ inputs.python-version }}-${{ inputs.use-vtk }}-${{ inputs.os }}-
+        key: OCCT-${{ env.OCCT }}-${{ inputs.use-vtk }}-${{ inputs.os }}-py-${{ inputs.python-version }}-
 
     # - - - - - - - - - - - - - - - - - - - - -
     #  Build OCP
@@ -138,7 +138,7 @@ runs:
       uses: actions/cache/restore@v5
       with:
         path: ${{ github.workspace }}/OCP/build/${{ inputs.module }}
-        key: OCP-${{ env.OCP }}-VTK-${{ inputs.use-vtk }}-py${{ inputs.python-version }}-${{ inputs.os }}-
+        key: OCP-${{ env.OCP }}-VTK-${{ inputs.use-vtk }}-${{ inputs.os }}-py${{ inputs.python-version }}-
 
 
     - name: Patch vtk out of OCP
