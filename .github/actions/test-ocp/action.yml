@@ -138,8 +138,10 @@ runs:
 
     # - - -
 
+    # cadquery 2.8 requires Python >= 3.11, and on macos-15-intel its
+    # numba -> llvmlite dependency has no wheel and fails to build from source.
     - name: Run cadquery tests (${{ inputs.use-vtk }})
-      if: inputs.use-vtk == 'vtk' && inputs.os != 'ubuntu-22.04-arm'
+      if: inputs.use-vtk == 'vtk' && inputs.os != 'ubuntu-22.04-arm' && inputs.os != 'macos-15-intel' && inputs.python-version != '3.10'
       shell: bash -l {0}
       run: |
         # Run cadquery tests
