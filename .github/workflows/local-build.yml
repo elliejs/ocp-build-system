@@ -50,6 +50,7 @@ jobs:
       - name: Run wheel build
         shell: bash -l {0}
         run: |
+          cd pypi
           conda run --live-stream -n ocp-build-system python -m build --no-isolation --wheel
           
       - name: Print info
