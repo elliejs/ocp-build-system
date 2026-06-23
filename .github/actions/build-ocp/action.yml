@@ -359,7 +359,7 @@ runs:
 
         mkdir $PKG_NAME
         cd $PKG_NAME
-        curl -O https://raw.githubusercontent.com/CadQuery/OCP/refs/heads/master/LICENSE
+        curl -O https://raw.githubusercontent.com/elliejs/OCP/refs/heads/master/LICENSE
         cd ..
 
         if [[ "$RUNNER_OS" == "Windows" ]]; then
